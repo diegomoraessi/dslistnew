@@ -22,4 +22,9 @@ public class GameController {
         return service.findAll();
     }
 
+    @GetMapping(value = "/{id}")
+    public GameMinDTO findById(Long id) {
+        return service.findById(id);
+    }
+
 }

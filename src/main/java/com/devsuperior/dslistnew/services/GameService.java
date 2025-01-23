@@ -20,4 +20,9 @@ public class GameService {
         List<Game> list = repository.findAll();
         return list.stream().map(x -> new GameMinDTO(x)).toList();
     }
+
+    public GameMinDTO findById(Long id) {
+        Game entity = repository.findById(id).get();
+        return new GameMinDTO(entity);
+    }
 }
